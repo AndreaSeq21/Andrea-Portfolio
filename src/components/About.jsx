@@ -97,23 +97,39 @@ export default function About() {
               </div>
             </div>
 
-            {/* Quick Details Card */}
-            <div className="glass-card" style={{ padding: '1.75rem' }}>
-              <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>
-                Contact & Location
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                  <MapPin size={18} style={{ color: 'var(--accent-cyan)' }} />
-                  <span>Location: <strong>{personalInfo.location}</strong></span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                  <Mail size={18} style={{ color: 'var(--accent-indigo)' }} />
-                  <span>Email: <strong>{personalInfo.email}</strong></span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                  <Phone size={18} style={{ color: 'var(--accent-emerald)' }} />
-                  <span>Phone: <strong>{personalInfo.phone}</strong></span>
+            {/* Lifestyle Photo & Quick Contact Card */}
+            <div className="glass-card" style={{ padding: '1.5rem', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+                <img
+                  src={personalInfo.avatarCasual}
+                  alt="Andrea Joyce Sequeira"
+                  style={{
+                    width: '100px',
+                    height: '110px',
+                    borderRadius: '0.85rem',
+                    objectFit: 'cover',
+                    border: '1px solid var(--border-glow)',
+                    flexShrink: 0
+                  }}
+                />
+                <div>
+                  <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>
+                    Contact & Base
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <MapPin size={14} style={{ color: 'var(--accent-cyan)' }} />
+                      <span>{personalInfo.location}</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <Mail size={14} style={{ color: 'var(--accent-indigo)' }} />
+                      <span>{personalInfo.email}</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <Phone size={14} style={{ color: 'var(--accent-emerald)' }} />
+                      <span>{personalInfo.phone}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

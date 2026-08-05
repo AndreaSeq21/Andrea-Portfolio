@@ -126,22 +126,76 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Card / Interactive Terminal Card */}
+          {/* Right Card / Interactive Profile & Terminal Card */}
           <div className="glass-card" style={{ padding: '1.75rem', position: 'relative' }}>
+            
+            {/* Profile Photo Header */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.25rem',
+              paddingBottom: '1.25rem',
+              marginBottom: '1.25rem',
+              borderBottom: '1px solid var(--border-subtle)'
+            }}>
+              <div style={{ position: 'relative', flexShrink: 0 }}>
+                <img
+                  src={personalInfo.avatar}
+                  alt={personalInfo.name}
+                  style={{
+                    width: '90px',
+                    height: '90px',
+                    borderRadius: '1.25rem',
+                    objectFit: 'cover',
+                    border: '2px solid var(--accent-cyan)',
+                    boxShadow: '0 0 20px rgba(56, 189, 248, 0.35)'
+                  }}
+                />
+                <span style={{
+                  position: 'absolute',
+                  bottom: '-4px',
+                  right: '-4px',
+                  width: '14px',
+                  height: '14px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--accent-emerald)',
+                  border: '2px solid var(--bg-dark)',
+                  boxShadow: '0 0 10px var(--accent-emerald)'
+                }}></span>
+              </div>
+
+              <div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: '800', color: '#ffffff' }}>
+                  {personalInfo.name}
+                </h3>
+                <p style={{ color: 'var(--accent-cyan)', fontSize: '0.85rem', fontWeight: '600' }}>
+                  {personalInfo.title}
+                </p>
+                <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.4rem' }}>
+                  <span className="glass-pill" style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem' }}>
+                    AWS Certified
+                  </span>
+                  <span className="glass-pill" style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem', borderColor: 'rgba(16,185,129,0.3)', color: '#a7f3d0' }}>
+                    6+ Yrs Exp
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Terminal Bar Header */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              paddingBottom: '1rem',
-              marginBottom: '1.25rem',
-              borderBottom: '1px solid var(--border-subtle)'
+              paddingBottom: '0.5rem',
+              marginBottom: '1rem'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef4444' }}></div>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#eab308' }}></div>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e' }}></div>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginLeft: '0.5rem', fontFamily: 'monospace' }}>
-                  andrea@developer: ~/portfolio
+                  andrea@developer: ~/profile
                 </span>
               </div>
               <Terminal size={16} style={{ color: 'var(--text-dim)' }} />
@@ -150,17 +204,20 @@ export default function Hero() {
             {/* Code Snippet Box */}
             <div style={{
               fontFamily: 'Consolas, Monaco, monospace',
-              fontSize: '0.9rem',
+              fontSize: '0.85rem',
               color: '#e2e8f0',
               lineHeight: '1.6',
-              marginBottom: '1.75rem'
+              marginBottom: '1.5rem',
+              background: 'rgba(7, 9, 14, 0.6)',
+              padding: '1rem',
+              borderRadius: '0.75rem',
+              border: '1px solid var(--border-subtle)'
             }}>
               <p><span style={{ color: 'var(--accent-purple)' }}>const</span> <span style={{ color: 'var(--accent-cyan)' }}>engineer</span> = &#123;</p>
               <p style={{ paddingLeft: '1.25rem' }}>name: <span style={{ color: '#ce9178' }}>"{personalInfo.name}"</span>,</p>
-              <p style={{ paddingLeft: '1.25rem' }}>specialties: [</p>
-              <p style={{ paddingLeft: '2.5rem', color: '#ce9178' }}>"Agentic AI", "React/Vite", "Full-Stack"</p>
-              <p style={{ paddingLeft: '1.25rem' }}>],</p>
-              <p style={{ paddingLeft: '1.25rem' }}>status: <span style={{ color: '#4ec9b0' }}>"Ready for high impact"</span></p>
+              <p style={{ paddingLeft: '1.25rem' }}>role: <span style={{ color: '#ce9178' }}>"Software / AI Engineer"</span>,</p>
+              <p style={{ paddingLeft: '1.25rem' }}>location: <span style={{ color: '#ce9178' }}>"Bay Area, CA"</span>,</p>
+              <p style={{ paddingLeft: '1.25rem' }}>status: <span style={{ color: '#4ec9b0' }}>"Open to top roles"</span></p>
               <p>&#125;;</p>
             </div>
 

@@ -1,5 +1,7 @@
 export const personalInfo = {
   name: "Andrea Joyce Sequeira",
+  avatar: "/images/profile-headshot.jpg",
+  avatarCasual: "/images/profile-casual.jpg",
   title: "Software Engineer & AI / Full Stack Developer",
   location: "Bay Area, CA (Open to Remote)",
   status: "Available for Software Engineering & AI Roles",
