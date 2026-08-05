@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Andrea Joyce Sequeira",
   title: "Software Engineer & AI / Full Stack Developer",
-  location: "Boston, MA (Open to Remote)",
+  location: "Bay Area, CA (Open to Remote)",
   status: "Available for Software Engineering & AI Roles",
   summary: "Software Engineer with 6 years of experience building full stack applications, AI-enabled analytics platforms, enterprise integrations, and cloud services across financial and industrial systems. Experienced in delivering secure, data-driven applications, modernizing enterprise workflows, deploying production services to cloud environments, and improving reliability across business-critical systems.",
   email: "andreajoycesequeira@gmail.com",
@@ -14,7 +14,7 @@ export const personalInfo = {
   heroStats: [
     { label: "Years Experience", value: "6+" },
     { label: "Enterprise Projects", value: "15+" },
-    { label: "AI & RAG Systems", value: "Production" },
+    { label: "AWS Certified", value: "Cloud Practitioner" },
     { label: "Hackathon Award", value: "Top 3" }
   ]
 };
@@ -173,6 +173,11 @@ export const projectsData = [
 
 export const awardsData = [
   {
+    title: "AWS Certified Cloud Practitioner",
+    organization: "Amazon Web Services (AWS)",
+    description: "Official certification validating foundational cloud knowledge, AWS services, cloud security, architecture, and pricing."
+  },
+  {
     title: "Best Presentation Award",
     organization: "State Street",
     description: "Earned Best Presentation Award during internship at State Street for outstanding communication and presentation skills."
@@ -191,12 +196,12 @@ export const awardsData = [
 
 export const assistantKnowledge = [
   {
-    keywords: ["skill", "stack", "tech", "java", "spring", "react", "python", "langchain", "rag", "aws"],
-    answer: "Andrea's core stack includes Java, Spring Boot, React, Python, LangChain/LangGraph, RAG architectures, SQL, AWS (ECS Fargate, Lambda), Kafka, Docker, and Terraform!"
+    keywords: ["skill", "stack", "tech", "java", "spring", "react", "python", "langchain", "rag", "aws", "certification"],
+    answer: "Andrea's core stack includes Java, Spring Boot, React, Python, LangChain/LangGraph, RAG architectures, SQL, AWS (ECS Fargate, Lambda), Kafka, Docker, and Terraform! Andrea is also an AWS Certified Cloud Practitioner."
   },
   {
     keywords: ["experience", "state street", "work", "job", "career", "ltimindtree", "nvent"],
-    answer: "Andrea currently works as a Software Engineer at State Street in Boston (Jan 2025–Present), architecting AI account analytics platforms and Spring Boot microservices. Previously worked at State Street (Intern), nVent Thermal, and LTIMindtree with 6+ years total experience!"
+    answer: "Andrea currently works as a Software Engineer at State Street (Jan 2025–Present), architecting AI account analytics platforms and Spring Boot microservices. Previously worked at State Street (Intern), nVent Thermal, and LTIMindtree with 6+ years total experience!"
   },
   {
     keywords: ["education", "degree", "university", "northeastern", "mumbai", "master"],
@@ -207,11 +212,11 @@ export const assistantKnowledge = [
     answer: "Projects include ResumeAI (AI resume analysis platform streaming Anthropic Claude API responses with Prisma/Postgres), Movie Management App (Spring Boot/Hibernate/MySQL), and Cloud-Backed Web Application (AWS/Pulumi/GitHub Actions)."
   },
   {
-    keywords: ["award", "hackathon", "copilot", "presentation", "achievement"],
-    answer: "Andrea won the Best Presentation Award at State Street, placed Top 3 in the State Street GitHub Copilot Hackathon, and served as an alumni speaker!"
+    keywords: ["award", "hackathon", "copilot", "presentation", "achievement", "certif"],
+    answer: "Andrea is an AWS Certified Cloud Practitioner, won the Best Presentation Award at State Street, placed Top 3 in the State Street GitHub Copilot Hackathon, and served as an alumni speaker!"
   },
   {
     keywords: ["contact", "email", "phone", "reach", "linkedin", "location"],
-    answer: "You can reach Andrea at andreajoycesequeira@gmail.com, 857-928-2918, or via LinkedIn (andreaseq21) and GitHub (AndreaSeq21). Andrea is based in Boston, MA."
+    answer: "You can reach Andrea at andreajoycesequeira@gmail.com, 857-928-2918, or via LinkedIn (andreaseq21) and GitHub (AndreaSeq21). Andrea is based in Bay Area, CA."
   }
 ];
