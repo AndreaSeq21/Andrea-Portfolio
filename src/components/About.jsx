@@ -1,6 +1,6 @@
 import React from 'react';
-import { Briefcase, GraduationCap, MapPin, Calendar, CheckCircle2, Award, Rocket } from 'lucide-react';
-import { experiences, personalInfo } from '../data/portfolioData';
+import { Briefcase, GraduationCap, MapPin, Award, CheckCircle2, Trophy, Phone, Mail } from 'lucide-react';
+import { experiences, education, awardsData, personalInfo } from '../data/portfolioData';
 
 export default function About() {
   return (
@@ -12,7 +12,7 @@ export default function About() {
           <span className="section-tag">Background & Experience</span>
           <h2 className="section-title">About <span className="gradient-text">Andrea</span></h2>
           <p className="section-desc">
-            Passionate about building scalable software applications, high-throughput systems, and user-centric agentic AI experiences.
+            {personalInfo.summary}
           </p>
         </div>
 
@@ -22,43 +22,85 @@ export default function About() {
           gap: '2.5rem'
         }} className="about-grid">
 
-          {/* Left Column: Bio & Core Values */}
+          {/* Left Column: Bio, Education & Awards */}
           <div>
+            {/* Education Card */}
             <div className="glass-card" style={{ padding: '2rem', marginBottom: '1.5rem' }}>
               <h3 style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: '1.4rem',
+                fontSize: '1.3rem',
                 fontWeight: '700',
-                marginBottom: '1rem',
+                marginBottom: '1.25rem',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.6rem'
               }}>
-                <Rocket style={{ color: 'var(--accent-cyan)' }} />
-                Engineering Philosophy
+                <GraduationCap style={{ color: 'var(--accent-cyan)' }} />
+                Education
               </h3>
-              <p style={{ color: 'var(--text-muted)', marginBottom: '1.25rem', lineHeight: '1.7' }}>
-                I believe that software should be both exceptionally fast under the hood and visually enchanting on the surface. Whether optimizing web app performance or orchestrating LLM agents, code quality and user experience are paramount.
-              </p>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1.5rem' }}>
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1rem', borderRadius: '0.75rem', border: '1px solid var(--border-subtle)' }}>
-                  <Award size={20} style={{ color: 'var(--accent-indigo)', marginBottom: '0.4rem' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-main)' }}>Clean Architecture</h4>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Modular, maintainable, self-documenting codebases.</p>
-                </div>
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1rem', borderRadius: '0.75rem', border: '1px solid var(--border-subtle)' }}>
-                  <Rocket size={20} style={{ color: 'var(--accent-purple)', marginBottom: '0.4rem' }} />
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-main)' }}>Agentic Innovation</h4>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Integrating LLMs into intuitive user workflows.</p>
-                </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {education.map((edu, idx) => (
+                  <div key={idx} style={{
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    padding: '1rem 1.25rem',
+                    borderRadius: '0.75rem',
+                    border: '1px solid var(--border-subtle)'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--text-main)' }}>
+                        {edu.degree}
+                      </h4>
+                      <span className="glass-pill" style={{ fontSize: '0.75rem' }}>
+                        {edu.period}
+                      </span>
+                    </div>
+                    <div style={{ color: 'var(--accent-cyan)', fontWeight: '600', fontSize: '0.9rem', marginTop: '0.2rem' }}>
+                      {edu.school} • <span style={{ color: 'var(--text-dim)' }}>{edu.location}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Quick Details List */}
+            {/* Awards & Recognition */}
+            <div className="glass-card" style={{ padding: '2rem', marginBottom: '1.5rem' }}>
+              <h3 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '1.3rem',
+                fontWeight: '700',
+                marginBottom: '1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.6rem'
+              }}>
+                <Trophy style={{ color: 'var(--accent-indigo)' }} />
+                Honors & Achievements
+              </h3>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                {awardsData.map((award, idx) => (
+                  <div key={idx} style={{
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    padding: '0.9rem 1.1rem',
+                    borderRadius: '0.75rem',
+                    border: '1px solid var(--border-subtle)'
+                  }}>
+                    <div style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-main)', marginBottom: '0.2rem' }}>
+                      🏆 {award.title}
+                    </div>
+                    <div style={{ fontSize: '0.825rem', color: 'var(--text-muted)' }}>
+                      {award.description}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Details Card */}
             <div className="glass-card" style={{ padding: '1.75rem' }}>
               <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>
-                Quick Snapshot
+                Contact & Location
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
@@ -66,12 +108,12 @@ export default function About() {
                   <span>Location: <strong>{personalInfo.location}</strong></span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                  <GraduationCap size={18} style={{ color: 'var(--accent-indigo)' }} />
-                  <span>B.S. in Computer Science & Artificial Intelligence</span>
+                  <Mail size={18} style={{ color: 'var(--accent-indigo)' }} />
+                  <span>Email: <strong>{personalInfo.email}</strong></span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                  <Briefcase size={18} style={{ color: 'var(--accent-emerald)' }} />
-                  <span>Specialization: Full-Stack React + Agentic AI</span>
+                  <Phone size={18} style={{ color: 'var(--accent-emerald)' }} />
+                  <span>Phone: <strong>{personalInfo.phone}</strong></span>
                 </div>
               </div>
             </div>
@@ -89,35 +131,46 @@ export default function About() {
               gap: '0.6rem'
             }}>
               <Briefcase style={{ color: 'var(--accent-cyan)' }} />
-              Career Journey
+              Professional Experience
             </h3>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {experiences.map((exp, idx) => (
                 <div key={idx} className="glass-card" style={{ padding: '1.5rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
                     <div>
-                      <h4 style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--text-main)' }}>
+                      <h4 style={{ fontSize: '1.15rem', fontWeight: '700', color: 'var(--text-main)' }}>
                         {exp.role}
                       </h4>
-                      <div style={{ color: 'var(--accent-cyan)', fontWeight: '600', fontSize: '0.9rem' }}>
-                        {exp.company}
+                      <div style={{ color: 'var(--accent-cyan)', fontWeight: '600', fontSize: '0.95rem' }}>
+                        {exp.company} • <span style={{ color: 'var(--text-dim)', fontWeight: '400', fontSize: '0.85rem' }}>{exp.location}</span>
                       </div>
                     </div>
-                    <div className="glass-pill" style={{ fontSize: '0.75rem', padding: '0.25rem 0.65rem' }}>
-                      <Calendar size={12} />
+                    <span className="glass-pill" style={{ fontSize: '0.75rem', padding: '0.25rem 0.65rem' }}>
                       {exp.period}
-                    </div>
+                    </span>
                   </div>
 
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-                    {exp.description}
-                  </p>
+                  {/* Tech stack badges */}
+                  <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', margin: '0.75rem 0' }}>
+                    {exp.stack.map((t, i) => (
+                      <span key={i} style={{
+                        fontSize: '0.7rem',
+                        background: 'rgba(99, 102, 241, 0.12)',
+                        border: '1px solid rgba(99, 102, 241, 0.25)',
+                        borderRadius: '0.25rem',
+                        padding: '0.15rem 0.45rem',
+                        color: '#c7d2fe'
+                      }}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.75rem' }}>
                     {exp.highlights.map((item, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                        <CheckCircle2 size={14} style={{ color: 'var(--accent-emerald)', marginTop: '2px', flexShrink: 0 }} />
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+                        <CheckCircle2 size={14} style={{ color: 'var(--accent-emerald)', marginTop: '3px', flexShrink: 0 }} />
                         <span>{item}</span>
                       </div>
                     ))}

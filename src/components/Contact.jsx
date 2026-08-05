@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, Copy, Check, MapPin, Github, Linkedin, Twitter, Sparkles } from 'lucide-react';
+import { Mail, Send, Copy, Check, MapPin, Github, Linkedin, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { personalInfo } from '../data/portfolioData';
 
@@ -14,7 +14,6 @@ export default function Contact() {
 
     setSubmitted(true);
 
-    // Trigger celebratory confetti animation
     try {
       confetti({
         particleCount: 80,
@@ -41,7 +40,7 @@ export default function Contact() {
           <span className="section-tag">Let's Connect</span>
           <h2 className="section-title">Get In <span className="gradient-text">Touch</span></h2>
           <p className="section-desc" style={{ margin: '0 auto' }}>
-            Have a project in mind, an open role, or want to collaborate on agentic AI applications? Send me a message!
+            Interested in collaboration, engineering roles, or AI analytics platform development? Reach out directly!
           </p>
         </div>
 
@@ -59,7 +58,7 @@ export default function Contact() {
                 Contact Information
               </h3>
               <p style={{ color: 'var(--text-muted)', marginBottom: '1.75rem', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                I'm currently available for full-time software engineering roles, technical advisory, and high-impact contract projects.
+                Currently based in Boston, MA. Open to Software Engineering, Full Stack, and AI Engineering opportunities.
               </p>
 
               {/* Copy Email Box */}
@@ -71,7 +70,7 @@ export default function Contact() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                marginBottom: '1.5rem'
+                marginBottom: '1rem'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                   <Mail size={20} style={{ color: 'var(--accent-cyan)' }} />
@@ -92,9 +91,29 @@ export default function Contact() {
                 </button>
               </div>
 
+              {/* Phone Card */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                padding: '1rem 1.25rem',
+                borderRadius: '0.85rem',
+                border: '1px solid var(--border-subtle)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                marginBottom: '1rem'
+              }}>
+                <Phone size={20} style={{ color: 'var(--accent-indigo)' }} />
+                <div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>Phone</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: '600', color: 'var(--text-main)' }}>
+                    {personalInfo.phone}
+                  </div>
+                </div>
+              </div>
+
               {/* Location Card */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                <MapPin size={20} style={{ color: 'var(--accent-indigo)' }} />
+                <MapPin size={20} style={{ color: 'var(--accent-cyan)' }} />
                 <span>{personalInfo.location}</span>
               </div>
             </div>
@@ -102,7 +121,7 @@ export default function Contact() {
             {/* Social Buttons */}
             <div className="glass-card" style={{ padding: '1.5rem' }}>
               <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-dim)', textTransform: 'uppercase', marginBottom: '1rem' }}>
-                Social Channels
+                Profiles
               </h4>
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ flexGrow: 1 }}>
@@ -137,7 +156,7 @@ export default function Contact() {
                   Message Sent!
                 </h3>
                 <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-                  Thank you for reaching out, {formData.name}. I'll get back to you within 24 hours.
+                  Thank you for reaching out, {formData.name}. I will get back to you shortly.
                 </p>
                 <button
                   onClick={() => {
@@ -208,7 +227,7 @@ export default function Contact() {
                     type="text"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="Project Inquiry / Role Opportunity"
+                    placeholder="Engineering Role / Project Opportunity"
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
@@ -230,7 +249,7 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell me about your project or inquiry..."
+                    placeholder="Hi Andrea, I'd like to discuss..."
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
